@@ -15,7 +15,7 @@ export default ({data}) => {
 
   return (
     <>
-      <h1>Examples Page - {author}</h1>
+      <p>Examples Page - {author}</p>
       <Header />
       <HeaderStatic />
     </>
