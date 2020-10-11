@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Layout from '../components/layout';
 
 const getSiteMetaData = graphql`
-    {
+    query FirstQuery {
         site {
             info: siteMetadata {
                 person {
