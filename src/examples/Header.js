@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 const getSiteMetaData = graphql`
     {
         site {
-            siteMetadata {
+            info: siteMetadata {
                 person {
                     age
                     name
@@ -23,7 +23,7 @@ const getSiteMetaData = graphql`
 const Header = () => {
   const {
     site: {
-      siteMetadata: {
+      info: {
         title,
         person: { name }
       }
