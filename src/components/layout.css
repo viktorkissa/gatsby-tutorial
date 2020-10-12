@@ -1,0 +1,19 @@
+.images {
+    text-align: center;
+    text-transform: capitalize;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.single-image {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+@media (min-width: 992px) {
+    .images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
