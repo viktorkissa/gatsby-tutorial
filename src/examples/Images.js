@@ -20,10 +20,18 @@ const getImages = graphql`
                 }
             }
         }
+        example: file(relativePath: { eq: "img-2.jpg"}) {
+            childImageSharp {
+                fluid(maxWidth: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+            }
+        }
     }
 `;
 
 const Images = () => {
+  const data = useStaticQuery(getImages);
   const {
     fixed: {
       childImageSharp: { fixed }
@@ -31,7 +39,7 @@ const Images = () => {
     fluid: {
       childImageSharp: { fluid }
     }
-  } = useStaticQuery(getImages);
+  } = data;
 
   return (
     <section className='images'>
@@ -46,6 +54,7 @@ const Images = () => {
       <article className='single-image'>
         <h3>Fluid Image/Svg</h3>
         <Image fluid={fluid} />
+        <Image fluid={data.example.childImageSharp.fluid} />
       </article>
     </section>
   )
