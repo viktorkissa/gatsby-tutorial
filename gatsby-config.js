@@ -20,19 +20,26 @@ module.exports = {
     }
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-css-modules-scss-support",
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        // Override the file regex for CSS modules
+        sassRuleModulesTest: /\.module\.s(a|c)ss$/,
+        useResolveUrlLoader: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "images",
         path: `${__dirname}/src/images/`
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: "posts",
         path: `${__dirname}/src/posts/`
