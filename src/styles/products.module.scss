@@ -1,0 +1,29 @@
+.page {
+  width: 90vw;
+  max-width: 1170px;
+  text-transform: capitalize;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  span {
+    margin-left: 2rem;
+    color: gray;
+  }
+
+  article {
+    margin: 2rem 0;
+
+    & > div {
+      height: 15rem;
+    }
+  }
+}
